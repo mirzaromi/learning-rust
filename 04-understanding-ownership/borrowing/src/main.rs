@@ -6,9 +6,47 @@ fn main() {
     // ascii_capitalize(&mut vec);
     // println!("Capitalized vector: {:?}", vec);
 
-    first_or_caller();
+    // first_or_caller();
+    borrows3();
+}
+
+// fn borrows() {
+//     let mut v: Vec<i32> = vec![1, 2, 3];
+//     let mut num: &mut i32 = &mut v[2];
+//     *num = 10;
+//     v[2] = 10;
+//     let new_num = v[0];
+//     println!("Third element is {}", v[2]);
+//     // println!("Third element is {}", *num);
+
+// }
+
+fn borrows3() {
+    let mut v: Vec<i32> = vec![1, 2, 3];
+    let num: &mut i32 = &mut v[2];
+    *num += 1;
+    let val2 = v[10];
+    println!("Third val2 is {}", val2);
+
+    println!("Third element is {}", *num);
+    println!("Vector is now {:?}", v);
 
 }
+
+// fn borrows2() {
+//     let mut x = 5;
+//     let y = &mut x; 
+//     *y += 1;        
+//     println!("{}", x); 
+//     *y += 1;        
+// }
+
+// fn borrows2() {
+//     let mut x = 5;
+//     let y = & x; // Mutable borrow of `x`
+//     println!("{}", x); // Works because the mutable borrow `y` is no longer used
+//     println!("{}", y);
+// }
 
 // fn dereference() {
 //     let x: Box<i32> = Box::new(10);
@@ -57,21 +95,21 @@ fn main() {
 // }
 
 
-fn first_or_caller() {
-    let strings = vec![];
-    let default = String::from("default");
-    let s = first_or(&strings, &default);
-    drop(default);
+// fn first_or_caller() {
+//     let strings = vec![];
+//     let default = String::from("default");
+//     let s = first_or(&strings, &default);
+//     drop(default);
 
-    println!("{}", s);
+//     println!("{}", s);
 
 
-}
+// }
 
-fn first_or<'a>(strings: &'a Vec<String>, default: &'a String) -> &'a String {
-    if strings.len() > 0 {
-        &strings[0]
-    } else {
-        default
-    }
-}
+// fn first_or<'a>(strings: &'a Vec<String>, default: &'a String) -> &'a String {
+//     if strings.len() > 0 {
+//         &strings[0]
+//     } else {
+//         default
+//     }
+// }
