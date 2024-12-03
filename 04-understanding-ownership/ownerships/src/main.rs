@@ -4,7 +4,16 @@ fn main() {
     // read(x);
     // add_suffix_caller();
 
-    dereference();
+    // dereference();
+
+    let a = String::from("Hello World!");
+    print_value(a);
+
+    println!("{a}");
+}
+
+fn print_value(a: String) {
+    println!("{a}")
 }
 
 // fn read (y: bool) {
@@ -39,6 +48,6 @@ fn dereference() {
 
     let s = String::from("Hello");
     let s_len1 = str::len(&s);
-    let s_len2 = s.leng();
+    let s_len2 = s.len();
     assert_eq!(s_len1, s_len2);
 }
