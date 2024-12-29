@@ -1,6 +1,12 @@
+//! # My Crate
+//! 
+//! `my_crate` is a collection of utilites to make performing certain
+//! calculations more convenient.
+
 /// Adds one to the number given.
 /// 
 /// # Example
+/// 
 /// ```
 /// let arg = 5;
 /// let answer = publishes::add_one(arg);
